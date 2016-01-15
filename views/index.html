@@ -6,11 +6,20 @@
 </head>
 <body>
     <div id="main">
+        <img src="http://www.haiwai.com/images/hw_logo1.png" />
         <ul>
-            {{each list}}
-            <li>编号：{{$value.id}} &nbsp;&nbsp;姓名：{{$value.name}}</a></li>
+            {{each list as item}}
+            <li><div>
+                <img src="{{item.pic}}" />
+                <p>{{item.name}}</p>
+                <p>{{item.openid}}</p>
+            </div></li>
             {{/each}}
         </ul>
     </div>
 </body>
 </html>
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.js"></script>
+<script>
+
+</script>

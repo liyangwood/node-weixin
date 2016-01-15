@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="main">
+    <ul>
+        {{each list as item}}
+        <li><div>
+            <img src="{{item.imglink}}" />
+            <p>{{item.docid}}</p>
+            <p>{{item.content}}</p>
+            <p>{{item.date}}</p>
+            <p>{{item.title1}}</p>
+            <a target="_blank" href="http://weixin.sogou.com{{item.url}}">{{item.title}}</a>
+        </div></li>
+        {{/each}}
+    </ul>
+</div>
+</body>
+</html>
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.js"></script>
+<script>
+
+</script>

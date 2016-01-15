@@ -4,6 +4,9 @@
  * Module dependencies.
  */
 
+//babel
+require("babel-core/register");
+
 var app = require('../app');
 var debug = require('debug')('node-weixin:server');
 var http = require('http');
