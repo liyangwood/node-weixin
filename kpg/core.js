@@ -6,6 +6,8 @@ var Class = require('./lib/myclass/class').Class;
 
 var request = require('request');
 
+var mongoose = require('mongoose');
+
 var AllConfig = {};
 var F = {
     createConfig : function(name){
@@ -90,8 +92,7 @@ F.request = Promise.promisifyAll(request);
 
 
 
-
-
+F.mongoose = mongoose;
 
 
 

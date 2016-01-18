@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var sogou = require('../lib/sogou/main');
+var NewNumber = sogou.NewNumber;
+var Article = sogou.Article;
 
 router.get('/', async function(req, res, next){
 
@@ -46,6 +48,49 @@ router.get('/weixin/openid/:id', async function(req, res, next){
     res.render('list', {
         list : list
     });
+});
+
+
+/* pn start */
+router.get('/pn/add', function(req, res, next){
+    res.render('pn/add', {});
+});
+router.get('/pn/list', function(req, res, next){
+    NewNumber.getAll(function(err, rs){
+        console.log(rs);
+        res.render('index', {
+            list : rs
+        });
+    });
+});
+router.get('/pn/article/list', async function(req, res, next){
+    var list = await Article.getAllSync();
+    res.render('list', {
+        list : list
+    });
+});
+
+router.get('/pnapi/search', async function(req, res, next){
+    var name = req.query.name;
+    var sb = new sogou.WeixinPublicArticle('');
+    var txt = await sb.searchName(name);
+    var num = sogou.NewNumber;
+    num.addByOpenid(txt, function(flag, rs){
+
+        if(flag){
+            res.json({
+                result : rs,
+                json : txt
+            });
+        }
+        else{
+            res.json({
+                result : rs
+            });
+        }
+    });
+
+
 });
 
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{include 'inc/meta'}}
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="aaa">name</label>
+            <input type="text" class="form-control js_name" id="aaa" placeholder="name">
+        </div>
+
+        <button type="button" class="btn btn-default js_btn">search</button>
+    </form>
+    <div class="box">
+
+
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+
+
+$('.js_btn').click(function(){
+    var name = $('.js_name').val();
+    $.ajax({
+        url : '/pnapi/search',
+        type : 'get',
+        dataType : 'json',
+        data : {
+            name : name
+        },
+        success : function(rs){
+            $('.box').html(JSON.stringify(rs));
+        }
+    })
+});
+
+</script>

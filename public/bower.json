@@ -1,0 +1,22 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/liyangwood/node-weixin",
+  "authors": [
+    "Jacky <liyang@chinagate.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "underscore": "~1.8.3"
+  }
+}

@@ -6,13 +6,13 @@
 </head>
 <body>
     <div id="main">
-        <img src="http://www.haiwai.com/images/hw_logo1.png" />
         <ul>
             {{each list as item}}
             <li><div>
                 <img src="{{item.pic}}" />
                 <p>{{item.name}}</p>
                 <p>{{item.openid}}</p>
+                <p>{{item.description}}</p>
             </div></li>
             {{/each}}
         </ul>
